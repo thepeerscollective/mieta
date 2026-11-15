@@ -15,7 +15,7 @@ export function Header() {
   return (
     <header className={`nav${open ? ' open' : ''}${scrolled ? ' scrolled' : ''}`}>
       <div className="wrap">
-        <a className="logo" href={href('/')} aria-label="Mięta, strona główna"><b>mięta</b><span>stomatologia · Kraków Podgórze</span></a>
+        <a className="logo" href={href('/')} aria-label="Mięta, strona główna"><b>mięta</b></a>
         <nav aria-label="Główna"><ul>
           {NAV.map(([p, l]) => <li key={p}><a href={href(p)} aria-current={path.startsWith(p.slice(0, -1)) ? 'page' : undefined}>{l}</a></li>)}
         </ul></nav>
