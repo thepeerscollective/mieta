@@ -71,8 +71,8 @@ export default function Listen() {
           <button aria-pressed={!quiet} onClick={() => setQuiet(false)}>Tak to brzmi</button>
           <button aria-pressed={quiet} onClick={() => setQuiet(true)}>W słuchawkach</button>
         </div>
-        <p className="quote" style={{ color: 'var(--mint)', marginTop: 24, maxWidth: 440 }}>Wersja w słuchawkach jest o 22 dB cichsza. Słychać ją jak deszcz za oknem.</p>
-        <p style={{ color: '#9FBFB2', fontSize: 14, marginTop: 40, maxWidth: 440 }}>Dźwięki odtworzone na podstawie nagrań z gabinetu. Słuchawki dostajesz przy każdej wizycie, razem z pilotem do serialu.</p>
+        <p className="quote" style={{ color: 'var(--mint)', marginTop: 'clamp(10px,2.67vh,24px)', maxWidth: 440 }}>Wersja w słuchawkach jest o 22 dB cichsza. Słychać ją jak deszcz za oknem.</p>
+        <p className="fine" style={{ color: '#9FBFB2', fontSize: 14, marginTop: 'clamp(10px,4.44vh,40px)', maxWidth: 440 }}>Dźwięki odtworzone na podstawie nagrań z gabinetu. Słuchawki dostajesz przy każdej wizycie, razem z pilotem do serialu.</p>
       </div>
       <div className="sounds rv">
         {SOUNDS.map((s, i) => (

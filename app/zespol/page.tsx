@@ -10,7 +10,7 @@ export default function Team() {
     <>
       <section className="hero"><div className="wrap">
         <p className="k rv in">Zespół</p><h1 className="rv in">Ludzie, którzy<br /><em>nie mówią „proszę szerzej”.</em></h1>
-        <p className="lead rv in" style={{ marginTop: 24 }}>Sześć osób, jeden gabinet. Każdy lekarz ma swoją specjalizację, ale pacjent ma jednego opiekuna od pierwszej rozmowy do końca leczenia.</p>
+        <p className="lead rv in" style={{ marginTop: 'clamp(10px,2.67vh,24px)' }}>Sześć osób, jeden gabinet. Każdy lekarz ma swoją specjalizację, ale pacjent ma jednego opiekuna od pierwszej rozmowy do końca leczenia.</p>
       </div></section>
       <section style={{ paddingBottom: 'clamp(72px,9vw,128px)' }}><div className="wrap g3" style={{ rowGap: 64 }}>
         {TEAM.map(d => (

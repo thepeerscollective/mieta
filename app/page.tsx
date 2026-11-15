@@ -52,7 +52,7 @@ export default function Home() {
       <Listen />
 
       <section className="sec soft"><div className="wrap g2">
-        <div className="rv"><h2>Ceny, zanim<br /><em>zapytasz.</em></h2><a className="btn b-green" style={{ marginTop: 32 }} href={href('/cennik/')}>Pełny cennik →</a></div>
+        <div className="rv"><h2>Ceny, zanim<br /><em>zapytasz.</em></h2><a className="btn b-green" style={{ marginTop: 'clamp(10px,3.56vh,32px)' }} href={href('/cennik/')}>Pełny cennik →</a></div>
         <ul className="price-list rv">
           {[['Wizyta zapoznawcza', '0 zł'], ['Przegląd z planem leczenia', '180 zł'], ['Higienizacja', '380 zł'], ['Wypełnienie', '350–550 zł'], ['Leczenie kanałowe', '1 400–2 200 zł']].map(([a, b]) => <li key={a}><span>{a}</span><b>{b}</b></li>)}
         </ul>
@@ -68,7 +68,7 @@ export default function Home() {
       </div></section>
 
       <section className="sec soft"><div className="wrap">
-        <h2 className="rv" style={{ marginBottom: 48 }}>Co mówią ci, którzy się bali.</h2>
+        <h2 className="rv" style={{ marginBottom: 'clamp(10px,5.33vh,48px)' }}>Co mówią ci, którzy się bali.</h2>
         <div className="g3">
           {[['„Nie byłem u dentysty 9 lat. Pierwsza wizyta to była serio tylko rozmowa. Teraz chodzę co pół roku.”', 'Kuba, 34'], ['„Dostałam plan leczenia z cenami na kartce. Nikt mnie nie naciskał. To zmienia wszystko.”', 'Ola, 41'], ['„Syn mówi, że to dentysta z kanapą. Nie płacze. To wystarczy za opinię.”', 'Monika, mama Stasia']].map(([q, a]) => (
             <figure className="card rv" key={a}><blockquote className="quote">{q}</blockquote><figcaption style={{ marginTop: 20, fontWeight: 500 }}>{a}</figcaption></figure>
@@ -82,14 +82,11 @@ export default function Home() {
       </div></section>
 
       <section className="sec soft"><div className="wrap">
-        <h2 className="rv" style={{ marginBottom: 48 }}>Gabinet, w którym da się odetchnąć.</h2>
-        <div className="g2" style={{ alignItems: 'start' }}>
-          <div className="rv"><Img n="m05" alt="Poczekalnia jak salon: kanapa, rośliny, łukowe przejście" ratio="4/3" /></div>
-          <div className="g2 rv" style={{ gap: 20 }}>
-            <Img n="m06" alt="Fotel stomatologiczny przy dużym oknie" arch ratio="3/4" />
-            <Img n="m07" alt="Herbata i woda na stoliku w poczekalni" arch ratio="3/4" />
-            <div style={{ gridColumn: '1/-1' }}><Img n="m08" alt="Słuchawki i pilot do serialu przy fotelu" ratio="16/9" /></div>
-          </div>
+        <div className="head rv"><h2>Gabinet, w którym da się odetchnąć.</h2><p className="k">ul. Kalwaryjska · parter · bez schodów</p></div>
+        <div className="place rv">
+          {([['m05', 'Poczekalnia jak salon: kanapa, rośliny, stolik', '01 · poczekalnia', 'a'], ['m06', 'Fotel stomatologiczny przy dużym oknie', '02 · gabinet 1, okno na podwórze', 'b'], ['m07', 'Herbata i woda na stoliku w poczekalni', '03 · herbata, zanim zaczniemy', 'c'], ['m08', 'Słuchawki i pilot do serialu przy fotelu', '04 · słuchawki i serial przy fotelu', 'd']] as const).map(([n, alt, cap, area]) => (
+            <figure key={n} style={{ gridArea: area }}><Img n={n} alt={alt} /><figcaption className="k">{cap}</figcaption></figure>
+          ))}
         </div>
       </div></section>
     </>

@@ -23,7 +23,7 @@ export default function RootCanal() {
       </div></section>
 
       <section className="sec dark"><div className="wrap">
-        <h2 className="rv" style={{ marginBottom: 32 }}>Jak to wygląda, krok po kroku.</h2>
+        <h2 className="rv" style={{ marginBottom: 'clamp(10px,3.56vh,32px)' }}>Jak to wygląda, krok po kroku.</h2>
         <ol className="steps rv">
           {[['Znieczulenie', 'Żel, potem cienka igła. Czekamy, aż ząb jest zupełnie „cichy”.'], ['Koferdam', 'Cienka gumowa osłona izoluje ząb. Nic nie spływa do gardła.'], ['Oczyszczenie kanałów', 'Pod mikroskopem, mechanicznie i płukaniem. To najdłuższa część.'], ['Wypełnienie', 'Kanały zamykamy na ciepło. Ząb dostaje szczelną odbudowę.'], ['Kontrola', 'Zdjęcie RTG po leczeniu i kontrola po 6 i 12 miesiącach.']].map(([h, p], i) => (
             <li key={h}><span className="n">0{i + 1}</span><h3>{h}</h3><p>{p}</p></li>

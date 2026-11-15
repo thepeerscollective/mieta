@@ -20,7 +20,7 @@ export default function Treatments() {
               <span className="h2" style={{ color: 'var(--mint)' }}>{t.n}</span>
               <h2 style={{ margin: '8px 0 24px' }}>{t.title}</h2>
               <ul className="price-list">{t.items.map(x => <li key={x}><span>{x}</span></li>)}</ul>
-              <div className="row" style={{ marginTop: 28 }}>
+              <div className="row" style={{ marginTop: 'clamp(10px,3.11vh,28px)' }}>
                 <b className="h3">{t.from}</b>
                 <a className="btn b-green" href={href(t.slug === 'kanalowe' ? '/leczenie/kanalowe/' : '/cennik/')}>Szczegóły i ceny →</a>
               </div>
