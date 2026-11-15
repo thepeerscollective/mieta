@@ -358,7 +358,7 @@ h2,.h2{font-size:clamp(28px,min(3.8vw,7.4vh),58px)}
 .days{display:grid!important;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}.days .day{min-width:0}
 
 /* PL / EN switch */
-.lang{display:inline-flex;align-items:center;gap:3px;font-size:12px;letter-spacing:.06em;font-weight:600;white-space:nowrap}
+.lang{margin:0 8px;display:inline-flex;align-items:center;gap:3px;font-size:12px;letter-spacing:.06em;font-weight:600;white-space:nowrap}
 .lang button{background:none;border:0;padding:6px 3px;cursor:pointer;color:inherit;opacity:.45;font:inherit;letter-spacing:inherit;transition:opacity .15s}
 .lang button:hover{opacity:.8}
 .lang button[aria-pressed="true"]{opacity:1;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1.5px}
