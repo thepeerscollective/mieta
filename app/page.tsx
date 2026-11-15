@@ -10,10 +10,11 @@ export default function Home() {
     <>
       <section className="hero"><div className="wrap g2">
         <div className="rv in">
-          <h1>Dentysta, do którego<br /><em>nie trzeba się zbierać.</em></h1>
+          <p className="k">Stomatologia · Kraków Podgórze</p>
+          <h1>Dentysta, do którego <em>nie trzeba się zbierać.</em></h1>
           <p className="lead">Spokojny gabinet, ceny znane przed leczeniem i lekarze, którzy najpierw rozmawiają, a potem leczą. Także dla tych, którzy nie byli u dentysty od lat.</p>
-          <div className="row" style={{ marginTop: 36 }}><a className="btn b-green" href={href('/rezerwacja/?powod=pierwsza')}>Umów pierwszą wizytę</a><a className="btn b-line" href={href('/cennik/')}>Zobacz cennik</a></div>
-          <div className="rating"><b>4,9</b><span>średnia z 1 214 opinii<br />Google i ZnanyLekarz</span></div>
+          <div className="row"><a className="btn b-green" href={href('/rezerwacja/?powod=pierwsza')}>Umów pierwszą wizytę</a><a className="btn b-line" href={href('/cennik/')}>Zobacz cennik</a></div>
+          <dl className="facts"><div><dt>Opinie Google</dt><dd>4,9 · 1 214</dd></div><div><dt>Pierwsza wizyta</dt><dd>0 zł · 60 min</dd></div><div><dt>Otwarte</dt><dd>pn–pt 8–20</dd></div></dl>
         </div>
         <div className="hero-img rv in">
           <Img n="m01" alt="Jasny gabinet stomatologiczny z łukowym oknem, rośliny i dwoje lekarzy" arch ratio="4/5" eager />

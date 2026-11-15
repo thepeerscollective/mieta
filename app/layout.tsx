@@ -1,7 +1,6 @@
 import type { Metadata, Viewport } from 'next';
-import '@fontsource-variable/fraunces/full.css';
-import '@fontsource-variable/fraunces/full-italic.css';
-import '@fontsource-variable/dm-sans/index.css';
+import '@fontsource-variable/schibsted-grotesk/index.css';
+import '@fontsource-variable/jetbrains-mono/index.css';
 import './globals.css';
 import { Footer, Header, Reveal } from '@/components/chrome';
 import { BASE } from '@/lib/base';
@@ -13,7 +12,7 @@ export const metadata: Metadata = {
   icons: { icon: `${BASE}/favicon.svg` },
   openGraph: { title: 'Mięta · stomatologia, Kraków Podgórze', description: 'Dentysta, do którego nie trzeba się zbierać.', images: [`${BASE}/img/m01.webp`] },
 };
-export const viewport: Viewport = { themeColor: '#FAF7F2', width: 'device-width', initialScale: 1 };
+export const viewport: Viewport = { themeColor: '#F1F1EC', width: 'device-width', initialScale: 1 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (

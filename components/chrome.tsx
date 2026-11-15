@@ -9,7 +9,7 @@ export function Header() {
   const path = usePathname() ?? '';
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  useEffect(() => { const f = () => setScrolled(scrollY > 8); f(); addEventListener('scroll', f, { passive: true }); return () => removeEventListener('scroll', f); }, []);
+  useEffect(() => { const f = () => { setScrolled(scrollY > 8); const m = document.documentElement.scrollHeight - innerHeight; document.documentElement.style.setProperty('--p', String(m > 0 ? scrollY / m : 0)); }; f(); addEventListener('scroll', f, { passive: true }); return () => removeEventListener('scroll', f); }, []);
   useEffect(() => setOpen(false), [path]);
   return (
     <header className={`nav${open ? ' open' : ''}${scrolled ? ' scrolled' : ''}`}>

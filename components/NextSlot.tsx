@@ -10,10 +10,10 @@ export default function NextSlot() {
     setLabel(t.getDay() === 0 ? 'Poniedziałek, 9:30' : 'Jutro, 9:30');
   }, []);
   return (
-    <div className="slot rv">
-      <p className="k"><span className="dot" />Najbliższy wolny termin</p>
+    <div className="slot">
+      <p className="k"><span className="dot" />Wolny termin</p>
       <b>{label}</b>
-      <p>lek. dent. Anna Mięta · wizyta zapoznawcza</p>
+      <p>lek. dent. Anna Mięta</p>
       <a className="link" href={href('/rezerwacja/')}>Zarezerwuj →</a>
     </div>
   );
