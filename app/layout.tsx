@@ -4,6 +4,7 @@ import '@fontsource-variable/fraunces/full-italic.css';
 import '@fontsource-variable/schibsted-grotesk/index.css';
 import '@fontsource-variable/jetbrains-mono/index.css';
 import './globals.css';
+import { LANG_BOOT } from '@/components/Lang';
 import { Footer, Header, Reveal } from '@/components/chrome';
 import { BASE } from '@/lib/base';
 
@@ -19,6 +20,7 @@ export const viewport: Viewport = { themeColor: '#F5F3EE', width: 'device-width'
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="pl">
+      <head><script dangerouslySetInnerHTML={{ __html: LANG_BOOT }} /></head>
       <body>
         <a className="skip" href="#main">Przejdź do treści</a>
         <Header />
