@@ -307,3 +307,4 @@ h2,.h2{font-size:clamp(28px,min(3.8vw,7.4vh),58px)}
 .map svg{max-height:calc(var(--avail) - 180px);width:auto;max-width:100%;margin:0 auto}
 @media (max-height:700px) and (min-width:761px){.fine{display:none}}
 .slot .k{white-space:nowrap}.slot{bottom:14px}.hero-img .ph{height:100%}
+.play.on{background:var(--white)}

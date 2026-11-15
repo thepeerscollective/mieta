@@ -84,7 +84,7 @@ export default function Listen() {
               <h3>{s.name}</h3>
             </header>
             <div className="wave" aria-hidden="true">
-              {bars(i).map((h, k) => <i key={k} style={{ height: `${h * s.peak * (quiet ? .32 : 1)}%`, animationDelay: `${(k % 7) * .08}s`, background: i === 0 && k < 12 && !quiet ? 'var(--peach)' : undefined }} />)}
+              {bars(i).map((h, k) => <i key={k} style={{ height: `${h * s.peak * (quiet ? .32 : 1)}%`, animationDelay: `${(k % 7) * .08}s` }} />)}
             </div>
             <div className="db"><b>{quiet ? s.quiet : s.db} dB</b><span>{quiet ? `zamiast ${s.db} dB` : `→ ${s.quiet} dB w słuchawkach`}</span></div>
             <p className="it" style={{ color: '#CFE0D8', fontSize: 19 }}>{s.like}</p>
