@@ -12,14 +12,14 @@ const PL_MONTHS = ['stycznia', 'lutego', 'marca', 'kwietnia', 'maja', 'czerwca',
 const MONTHS = ['styczeń', 'luty', 'marzec', 'kwiecień', 'maj', 'czerwiec', 'lipiec', 'sierpień', 'wrzesień', 'październik', 'listopad', 'grudzień'];
 
 function Chips({ list, value, set }: { list: string[]; value: string; set: (v: string) => void }) {
-  return <div className="chips">{list.map(l => <button key={l} type="button" className="chip" aria-pressed={value === l} onClick={() => set(l)}>{l}</button>)}</div>;
+  return <div className="chips">{list.map(l => <button key={l} type="button" className="chip" aria-pressed={value === l} onClick={() => set(value === l ? '' : l)}>{l}</button>)}</div>;
 }
 
 export default function Booking() {
   const [step, setStep] = useState(1);
-  const [reason, setReason] = useState(REASONS[0]);
-  const [comfort, setComfort] = useState(COMFORT[0]);
-  const [doc, setDoc] = useState(DOCS[0]);
+  const [reason, setReason] = useState('');
+  const [comfort, setComfort] = useState('');
+  const [doc, setDoc] = useState('');
   const [today, setToday] = useState<Date | null>(null);
   const [day, setDay] = useState<Date | null>(null);
   const [hour, setHour] = useState('');
@@ -58,7 +58,7 @@ export default function Booking() {
     <div className="done-box rv in">
       <p className="k">Gotowe</p>
       <h2 style={{ margin: '14px 0' }}>Do zobaczenia, {name.split(' ')[0] || 'do zobaczenia'}.</h2>
-      <p className="lead" style={{ margin: '0 auto 28px' }}>{day && fmtDay(day)}, {hour} · {doc}. Przypomnimy SMS-em dzień wcześniej. Jeśli coś się zmieni, odwołasz jednym kliknięciem, bez tłumaczenia się.</p>
+      <p className="lead" style={{ margin: '0 auto 28px' }}>{day && fmtDay(day)}, {hour} · {doc || 'pierwszy wolny lekarz'}. Przypomnimy SMS-em dzień wcześniej. Jeśli coś się zmieni, odwołasz jednym kliknięciem, bez tłumaczenia się.</p>
       <a className="btn b-green" href={href('/pierwsza-wizyta/')}>Zobacz, jak wygląda wizyta</a>
     </div>
   );
@@ -70,7 +70,7 @@ export default function Booking() {
         <div className="card rv in" style={{ display: 'grid', gap: 28 }}>
           <div><h3 style={{ marginBottom: 16 }}>Z czym przychodzisz?</h3><Chips list={REASONS} value={reason} set={setReason} /></div>
           <div><h3 style={{ marginBottom: 16 }}>Komfort (opcjonalnie)</h3><Chips list={COMFORT} value={comfort} set={setComfort} /></div>
-          <div><button className="btn b-green" onClick={() => setStep(2)}>Dalej: lekarz i termin →</button></div>
+          <div><button className="btn b-green" disabled={!reason} onClick={() => setStep(2)}>{reason ? 'Dalej: lekarz i termin →' : 'Wybierz powód wizyty'}</button></div>
         </div>
       )}
       {step === 2 && (
@@ -89,7 +89,7 @@ export default function Booking() {
             </div>
             <div className="slots">
               <h3>{day ? fmtDay(day) : 'Wybierz dzień'}</h3>
-              <p style={{ color: 'var(--grey)', fontSize: 15 }}>{doc} · 60 min</p>
+              <p style={{ color: 'var(--grey)', fontSize: 15 }}>{doc || 'pierwszy wolny lekarz'} · 60 min</p>
               {day && <div className="slots-grid">{HOURS.map(h => <button key={h} disabled={takenHour(h)} style={takenHour(h) ? { opacity: .35, cursor: 'default' } : undefined} aria-pressed={hour === h} onClick={() => setHour(h)}>{takenHour(h) ? `${h} · zajęte` : h}</button>)}</div>}
               {hour && <p style={{ fontSize: 15, marginBottom: 18 }}>Wybrano {hour}. Termin trzymamy dla Ciebie 10 minut.</p>}
               <button className="btn b-green" disabled={!hour} style={!hour ? { opacity: .4 } : undefined} onClick={() => setStep(3)}>Dalej: Twoje dane →</button>
@@ -111,7 +111,7 @@ export default function Booking() {
             <h3>Twoja wizyta</h3>
             <div><dt>Powód</dt><dd>{reason}</dd></div>
             <div><dt>Komfort</dt><dd>{comfort}</dd></div>
-            <div><dt>Lekarz</dt><dd>{doc}</dd></div>
+            <div><dt>Lekarz</dt><dd>{doc || 'pierwszy wolny'}</dd></div>
             <div><dt>Termin</dt><dd>{day && fmtDay(day)}, {hour}</dd></div>
             <p style={{ color: 'var(--grey)', fontSize: 14 }}>Przypomnimy SMS-em dzień wcześniej. Odwołasz jednym kliknięciem, bez tłumaczenia się.</p>
           </dl>
